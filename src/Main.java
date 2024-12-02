@@ -6,8 +6,9 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите номер напитка: \n 1 - Эспрессо \n 2 - Молоко\n 3 - Мороженное\n 4 - Сироп" +
                 "\n 5 - Сок\n 6 - Флэт-Уайт\n 7 - Латте\n 8 - Смузи\n Чтобы выключить, введите 0");
-        while(true) {
-            int instruction = scanner.nextInt();
+        int instruction;
+        scan: while(true) {
+            instruction = scanner.nextInt();
             switch (instruction) {
                 case 1:
                     coffeeMachine.espresso();
@@ -33,9 +34,7 @@ public class Main {
                 case 8:
                     coffeeMachine.smoothie();
                     break;
-            }
-            if (instruction==0){
-                break;
+                case 0: break scan;
             }
         }
     }
